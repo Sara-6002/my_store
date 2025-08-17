@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella Botega | Digital Treasures</title>
+  <title>My Store</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap">
   <style>
     :root {
@@ -29,80 +29,70 @@
       line-height: 1.6;
       color: var(--text);
       background-color: var(--cream);
-      padding: 0;
-      margin: 0;
-     
-      background-attachment: fixed;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 2rem;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding: 2rem 0;
-      border-bottom: var(--border);
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      color: var(--olive);
-    }
-
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.5px;
-    }
-
-    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
       color: var(--olive);
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      font-style: italic;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      margin: 3rem 0;
-    }
-
-    .product-card {
+    .product {
       background: white;
       border-radius: var(--radius);
-      overflow: hidden;
+      padding: 0;
+      max-width: 500px;
+      margin: 2rem auto;
       box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
       border: var(--border);
-      position: relative;
+      overflow: hidden;
     }
 
-    .product-card:hover {
-      transform: translateY(-5px);
+    .product h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--olive);
+      padding: 1.5rem 1.5rem 0;
+      font-size: 1.5rem;
     }
 
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
+    .product p {
+      padding: 0.5rem 1.5rem;
+      color: var(--text);
+    }
+
+    .product .price {
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      font-weight: 500;
+      padding: 0 1.5rem;
+    }
+
+    .product a {
+      display: block;
       background: var(--terracotta);
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      margin: 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .product a:hover {
+      background: var(--olive);
+      transform: translateY(-2px);
     }
 
     .product-image {
-      height: 220px;
+      width: 100%;
+      height: 250px;
       overflow: hidden;
-      position: relative;
     }
 
     .product-image img {
@@ -112,140 +102,36 @@
       transition: transform 0.5s ease;
     }
 
-    .product-card:hover .product-image img {
+    .product:hover .product-image img {
       transform: scale(1.03);
     }
 
-    .product-content {
-      padding: 1.8rem;
-      position: relative;
-    }
-
-    .product-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--olive);
-    }
-
-    .product-description {
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .product-price {
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: var(--terracotta);
-      margin-bottom: 1.5rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .buy-button {
-      display: inline-block;
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background-color: var(--terracotta);
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 500;
-      border-radius: var(--radius);
-      transition: all 0.3s ease;
-      border: none;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .buy-button:hover {
-      background-color: var(--olive);
-      transform: translateY(-2px);
-    }
-
-    .more-info {
-      font-size: 0.9rem;
-      color: var(--olive);
-      margin-top: 1rem;
-      text-align: center;
-      font-style: italic;
-      opacity: 0.8;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 5rem;
-      padding: 2rem 0;
-      border-top: var(--border);
-      color: var(--olive);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .container {
+    @media (max-width: 600px) {
+      body {
         padding: 1.5rem;
       }
       
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       
-      .subtitle {
-        font-size: 1.1rem;
+      .product {
+        margin: 1.5rem auto;
       }
-
-      .product-grid {
-        gap: 2rem;
-      }
-    }
-
-    /* Decorative elements */
-    .olive-branch {
-      position: absolute;
-      opacity: 0.1;
-      z-index: -1;
-    }
-
-    .olive-branch.top {
-      top: 0;
-      right: 0;
-      transform: rotate(15deg);
-    }
-
-    .olive-branch.bottom {
-      bottom: 0;
-      left: 0;
-      transform: rotate(-15deg);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Bella Botega</h1>
-      <p class="subtitle">Digital treasures inspired by the Mediterranean soul</p>
-    </header>
+  <h1>Welcome to My Store</h1>
 
-    <main>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://i.postimg.cc/q7vhyDJd/Design-sans-titre.png" alt="Italian-inspired Portfolio Template" />
-          </div>
-          <div class="product-content">
-            <h3 class="product-title">Portfolio Template</h3>
-            <p class="product-description">Like a sun-drenched villa overlooking the Mediterranean, this template brings warmth and elegance to your work. Designed with the rustic charm of Italian coastlines and the clean lines of modern design.</p>
-            <div class="product-price">€15</div>
-            <a href="https://sarachoukri.gumroad.com/l/portfolio" class="buy-button">Acquista Ora</a>
-            <p class="more-info">For more details, click "Acquista Ora"</p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <p>© 2023 Bella Botega. Crafted with love from the Mediterranean.</p>
-    </footer>
+  <div class="product">
+    <div class="product-image">
+      <img src="https://i.postimg.cc/q7vhyDJd/Design-sans-titre.png" alt="Portfolio Template">
+    </div>
+    <h2>Portfolio Template</h2>
+    <p class="price">$15</p>
+    <p>A beautifully crafted template with Mediterranean warmth and elegance</p>
+    <a href="https://sarachoukri.gumroad.com/l/portfolio">Buy Now</a>
   </div>
 </body>
 </html>
