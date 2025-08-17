@@ -1,1 +1,198 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Store | Premium Digital Products</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-image {
+      height: 200px;
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .buy-button {
+      display: inline-block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius);
+      transition: background-color 0.2s ease;
+    }
+
+    .buy-button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .more-info {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 0.5rem;
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to My Store</h1>
+      <p class="subtitle">Premium digital products to help you showcase your work</p>
+    </header>
+
+    <main>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://i.postimg.cc/q7vhyDJd/Design-sans-titre.png" alt="Portfolio Template Preview" />
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Portfolio Template</h3>
+            <p class="product-description">A beautifully designed portfolio template to showcase your creative work. Perfect for designers, photographers, and artists looking to present their projects professionally.</p>
+            <div class="product-price">$15</div>
+            <a href="https://sarachoukri.gumroad.com/l/portfolio" class="buy-button">Buy Now</a>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2023 My Store. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
