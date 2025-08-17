@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Store | Premium Digital Products</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <title>Bella Botega | Digital Treasures</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --text: #1f2937;
-      --text-light: #6b7280;
-      --bg: #f9fafb;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
-      --radius: 12px;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --terracotta: #E07A5F;
+      --olive: #6B705C;
+      --cream: #F8F1E5;
+      --sand: #DDBEA9;
+      --sea: #A5A58D;
+      --text: #3D405B;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+      --border: 1px solid rgba(221, 190, 169, 0.3);
     }
 
     * {
@@ -26,172 +25,226 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.5;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
       color: var(--text);
-      background-color: var(--bg);
-      padding: 2rem 1rem;
+      background-color: var(--cream);
+      padding: 0;
+      margin: 0;
+      background-image: url('https://i.postimg.cc/8zZ4J6J5/texture.png');
+      background-attachment: fixed;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 2rem;
     }
 
     header {
       text-align: center;
       margin-bottom: 3rem;
+      padding: 2rem 0;
+      border-bottom: var(--border);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: var(--olive);
     }
 
     h1 {
-      font-size: 2.25rem;
-      font-weight: 600;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
-      color: var(--text);
+      letter-spacing: 0.5px;
     }
 
     .subtitle {
-      color: var(--text-light);
-      font-size: 1.125rem;
+      color: var(--olive);
+      font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto;
+      font-style: italic;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
     }
 
     .product-card {
-      background: var(--card-bg);
+      background: white;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s ease;
+      border: var(--border);
+      position: relative;
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-5px);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--terracotta);
     }
 
     .product-image {
-      height: 200px;
-      background-color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 220px;
       overflow: hidden;
+      position: relative;
     }
 
     .product-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.03);
     }
 
     .product-content {
-      padding: 1.5rem;
+      padding: 1.8rem;
+      position: relative;
     }
 
     .product-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--olive);
     }
 
     .product-description {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      line-height: 1.5;
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
 
     .product-price {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 1.25rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
     }
 
     .buy-button {
       display: inline-block;
       width: 100%;
-      padding: 0.75rem 1rem;
-      background-color: var(--primary);
+      padding: 0.8rem 1rem;
+      background-color: var(--terracotta);
       color: white;
       text-align: center;
       text-decoration: none;
       font-weight: 500;
       border-radius: var(--radius);
-      transition: background-color 0.2s ease;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
     }
 
     .buy-button:hover {
-      background-color: var(--primary-dark);
+      background-color: var(--olive);
+      transform: translateY(-2px);
     }
 
     .more-info {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--olive);
+      margin-top: 1rem;
       text-align: center;
       font-style: italic;
+      opacity: 0.8;
     }
 
     footer {
       text-align: center;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-light);
-      font-size: 0.875rem;
+      margin-top: 5rem;
+      padding: 2rem 0;
+      border-top: var(--border);
+      color: var(--olive);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 640px) {
-      body {
-        padding: 1.5rem 0.5rem;
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
       }
       
       h1 {
-        font-size: 1.75rem;
+        font-size: 2.2rem;
       }
       
       .subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
+
+      .product-grid {
+        gap: 2rem;
+      }
+    }
+
+    /* Decorative elements */
+    .olive-branch {
+      position: absolute;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .olive-branch.top {
+      top: 0;
+      right: 0;
+      transform: rotate(15deg);
+    }
+
+    .olive-branch.bottom {
+      bottom: 0;
+      left: 0;
+      transform: rotate(-15deg);
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Welcome to My Store</h1>
-      <p class="subtitle">Premium digital products to help you showcase your work</p>
+      <h1>Bella Botega</h1>
+      <p class="subtitle">Digital treasures inspired by the Mediterranean soul</p>
     </header>
 
     <main>
       <div class="product-grid">
         <div class="product-card">
           <div class="product-image">
-            <img src="https://i.postimg.cc/q7vhyDJd/Design-sans-titre.png" alt="Portfolio Template Preview" />
+            <img src="https://i.postimg.cc/q7vhyDJd/Design-sans-titre.png" alt="Italian-inspired Portfolio Template" />
           </div>
           <div class="product-content">
             <h3 class="product-title">Portfolio Template</h3>
-            <p class="product-description">A beautifully designed portfolio template to showcase your creative work. Perfect for designers, photographers, and artists looking to present their projects professionally.</p>
-            <div class="product-price">$15</div>
-            <a href="https://sarachoukri.gumroad.com/l/portfolio" class="buy-button">Buy Now</a>
-            
+            <p class="product-description">Like a sun-drenched villa overlooking the Mediterranean, this template brings warmth and elegance to your work. Designed with the rustic charm of Italian coastlines and the clean lines of modern design.</p>
+            <div class="product-price">€15</div>
+            <a href="https://sarachoukri.gumroad.com/l/portfolio" class="buy-button">Acquista Ora</a>
+            <p class="more-info">For more details, click "Acquista Ora"</p>
           </div>
         </div>
       </div>
     </main>
 
     <footer>
-      <p>© 2023 My Store. All rights reserved.</p>
+      <p>© 2023 Bella Botega. Crafted with love from the Mediterranean.</p>
     </footer>
   </div>
 </body>
